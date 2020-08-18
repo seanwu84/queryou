@@ -1,0 +1,26 @@
+extends layout.pug
+
+include include/auth-input.pug
+
+append head
+  script(src="/public/js/interests.js" type="module" defer)
+  link(rel="stylesheet" href="/public/css/interests.css")
+
+block content
+    #banner
+        #banner-content
+            img(id="logo" src="../public/images/logo.png")
+            #progress-bar
+                #start Start
+                #bar
+                #progress
+                #finish Finish
+    #interests
+        #title
+            #title-content What are your interests?
+        #topics
+        #footer
+            button(type="button" class="more disabled") Follow 3 or More Topics to Continue
+            form#csrf-form
+                input(type='hidden' name='_csrf' value=csrf)
+                button(type="submit" class="next blocked") Next
